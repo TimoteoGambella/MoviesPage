@@ -1,0 +1,23 @@
+.swal-modal{
+    background-color: $color-1;
+    border-radius: 2vw;
+    .swal-icon--error{
+        border-color: black;
+        .swal-icon--error__line{
+            background-color: black;
+        }
+    }
+    .swal-text{
+        font-weight: 600;
+    }
+    .swal-button{
+        background-color: black;
+        color: $color-1;
+        &:hover{
+            color: black;
+            background-color: $color-1;
+            border: 2px solid black;
+            font-weight: 600;
+        }
+    }
+}

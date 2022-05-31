@@ -1,0 +1,41 @@
+.container-button-login{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    .button-login {
+        background: black;
+        color: $color-1;
+        border: 2px solid black;
+        padding: .5vw 1vw;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        font-size: 1.8vw;
+        font-family: $font;
+        letter-spacing: .1vw;
+        
+        &:hover{
+            color: black;/* color de fuente hover */
+        }
+        &::after{
+            content: "";
+            background: $color-1; /* color de fondo hover */
+            position: absolute;
+            z-index: -1;
+            padding: .5vw 1vw;
+
+            display: block;
+            left: -20%;
+            right: -20%;
+            top: 0;
+            bottom: 0;
+            transform: skewX(-45deg) scale(0, 1);
+            transition: all 0.3s ease;
+        }
+        &:hover::after{
+            transition: all 0.3s ease-out;
+            transform: skewX(-45deg) scale(1, 1);
+        }
+    }
+}

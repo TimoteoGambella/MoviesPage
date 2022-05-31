@@ -1,0 +1,69 @@
+.registrarse-container{
+    width: auto;
+    height: auto;
+    padding: 1vw 10vw;
+    background-color: $color-2;
+    border-radius: 2vw;
+    margin-top: 15vw;
+    p{
+        color: black;
+        font-size: 4vw;
+        text-align: center;
+        letter-spacing: 1vw;
+        font-family: $font;
+        text-shadow: 5px 5px 20px black;
+        background-color: transparent;
+    }
+    form{
+        background-color: transparent;
+    }
+    span{
+        background-color: $color-2;
+    }
+    .input{
+        text-align: center;
+        width: 35vw;
+        margin-bottom: .8vw;
+        display: flex;
+        background-color: transparent;
+        .form-input{
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            height: 3rem;
+            padding-left: 1vw;
+            font-size: 1.5vw;
+            background-color: white;
+        }
+        .input-pass{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35vw;
+            background-color: transparent;
+            img{
+                cursor: pointer;
+                background-color: transparent;
+            }
+        }
+        .input-pass-especial{
+            input{
+                margin-right: 1vw;
+            }
+        }
+    }
+    #contenedor{
+        background-color: transparent;
+    }
+    .logearse{
+        margin-top: 1.5vw;
+        margin-bottom: -1vw;
+        font-size: 1.8vw;
+        letter-spacing: 0px;
+        text-shadow: none;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

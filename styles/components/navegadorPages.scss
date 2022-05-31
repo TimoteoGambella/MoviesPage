@@ -1,0 +1,14 @@
+.navegador-pages{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: $color-1;
+    p{
+        cursor: pointer;
+        padding: 1.5vw 1vw 2vw;
+        &:hover{
+            transform: scale(1.1);
+            color: $color-2;
+        }
+    }
+}

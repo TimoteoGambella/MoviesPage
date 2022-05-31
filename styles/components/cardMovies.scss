@@ -1,0 +1,43 @@
+.container-card{
+    margin: .5vw;
+    .card{
+        width: 14rem;
+        border: 1px solid $color-1;
+        overflow: hidden;
+    }
+    .card-img-top{
+        min-height: 25vw;
+        overflow: hidden;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    .card-title{
+        min-height: 8vw;
+        max-height: 8vw;
+        color: $color-1;
+        text-align: center;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color-1;
+            border-radius: 2vw;
+        }
+    }
+    .card-text{
+        min-height: 10vw;
+        max-height: 10vw;
+        overflow-y: scroll;
+        padding: .1vw .3vw;
+        color: $color-2;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color-1;
+            border-radius: 2vw;
+        }
+    }
+}
