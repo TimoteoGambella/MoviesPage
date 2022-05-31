@@ -5,7 +5,7 @@ import Image from "next/image";
 import ojo from "./ojo.png"
 import swal from "sweetalert";
 import Button from "../buttons/button";
-import Loader from "../loader";
+import Loader from "../Loader";
 
 export default function Logearse({form,setForm,saveData}){
 

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import ojo from "./ojo.png"
 import swal from "sweetalert";
 import { addUser, usersData } from "../../../firebase/Firebase";
-import Loader from "../loader";
+import Loader from "../Loader";
 
 export default function Registrarse({form,setForm,saveData}){
 
