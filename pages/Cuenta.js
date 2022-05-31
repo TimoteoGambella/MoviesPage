@@ -7,7 +7,7 @@ export default function Cuenta(){
 
         const imprimir = new ConectorPlugin()
             imprimir.texto("HOLA MUNDO")
-            imprimir.imprimirEn("EPSON")
+            imprimir.imprimirEn("EPSON TM-T20II Receipt")
             .then(respuestaAlImprimir => {
                 if (respuestaAlImprimir === true) {
                     console.log("OK")
