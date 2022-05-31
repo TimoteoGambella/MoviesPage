@@ -1,5 +1,5 @@
 import Header from "./Components/header/Header";
-import { ConectorPlugin } from "./ConectorPlugin";
+import { ConectorPlugin } from "../ConectorPlugin";
 
 
 export default function Cuenta(){

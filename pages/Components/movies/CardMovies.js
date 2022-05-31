@@ -40,23 +40,25 @@ export default function CardMovies({movie,setMovieDetail}){
 
     return(
         <div className="container-card">
-            <Card>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="NOT FOUND"/>
-                <Card.Body>
-                    
-                    <button className="favourite-btn" onClick={()=>{addFavMoviesButton(),setFavButton(!favButton)}}
-                    style={{display:!favButton?"block":"none"}}>🤍</button>
+            {movie!==undefined && 
+                <Card>
+                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="NOT FOUND"/>
+                    <Card.Body>
+                        
+                        <button className="favourite-btn" onClick={()=>{addFavMoviesButton(),setFavButton(!favButton)}}
+                        style={{display:!favButton?"block":"none"}}>🤍</button>
 
-                    <button className="favourite-btn favourite-btn-red" onClick={()=>{removeFavMoviesButton(),setFavButton(!favButton)}}
-                    style={{display:favButton?"block":"none"}}>❤️</button>
+                        <button className="favourite-btn favourite-btn-red" onClick={()=>{removeFavMoviesButton(),setFavButton(!favButton)}}
+                        style={{display:favButton?"block":"none"}}>❤️</button>
 
-                    <Card.Title>{movie.title}</Card.Title>
+                        <Card.Title>{movie.title}</Card.Title>
 
-                    <div style={{width:"fit-content",margin:"auto"}} onClick={()=>detailsButton()}>
-                        <Button info={"Detalles"}/>
-                    </div>
-                </Card.Body>
-            </Card>
+                        <div style={{width:"fit-content",margin:"auto"}} onClick={()=>detailsButton()}>
+                            <Button info={"Detalles"}/>
+                        </div>
+                    </Card.Body>
+                </Card>
+            }
         </div>
     )
 }
