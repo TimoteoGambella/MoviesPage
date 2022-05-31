@@ -3,18 +3,16 @@ import { ConectorPlugin } from "../ConectorPlugin";
 
 
 export default function Cuenta(){
-    const loguear = texto => (new Date()).toLocaleString() + " " + texto + "\n";
-
     const ticket =()=>{
-        const imprimir = new ConectorPlugin()
-            imprimir.texto("HOLA MUNDO")
-            imprimir.imprimirEn("EPSON")
+        const conector = new ConectorPlugin()
+            conector.texto("HOLA MUNDO")
+            conector.imprimirEn("EPSON")
             .then(respuestaAlImprimir => {
+                console.log(respuestaAlImprimir)
                 if (respuestaAlImprimir === true) {
-                    loguear("Impreso correctamente");
                     console.log("OK")
                 } else {
-                    loguear("Error. La respuesta es: " + respuestaAlImprimir);
+                    console.log("No OK")
                 }
             });
     }
