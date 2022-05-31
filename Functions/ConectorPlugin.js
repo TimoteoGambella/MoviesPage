@@ -16,7 +16,7 @@ export const ConectorPlugin = (() => {
 
     class ConectorPlugin {
 
-        static URL_PLUGIN_POR_DEFECTO = "http://localhost:8000";
+        static URL_PLUGIN_POR_DEFECTO = "movie-page-theta.vercel.app";
         static OperacionTicket = Operacion;
         static Constantes = {
             AccionTextoConAcentos: "textoacentos",
