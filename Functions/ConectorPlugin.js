@@ -181,7 +181,7 @@ export const ConectorPlugin = (() => {
                 operaciones: this.operaciones,
                 impresora: nombreImpresora,
             };
-            const respuestaRaw = await fetch(this.ruta + "/imprimir", {
+            const respuestaRaw = await fetch(this.ruta + "/Imprimir", {
                 method: "POST",
                 body: JSON.stringify(payload),
             });
