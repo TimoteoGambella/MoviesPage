@@ -1,7 +1,6 @@
 import '../styles/Styles.scss'
 import Head from 'next/head'
 import { Movies } from '../Context/MoviesContext'
-import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {
   return (
