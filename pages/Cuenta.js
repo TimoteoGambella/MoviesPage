@@ -6,10 +6,9 @@ export default function Cuenta(){
     const loguear = texto => (new Date()).toLocaleString() + " " + texto + "\n";
 
     const ticket =()=>{
-        console.log("hola")
         const imprimir = new ConectorPlugin()
             imprimir.texto("HOLA MUNDO")
-            imprimir.imprimirEn("")
+            imprimir.imprimirEn("EPSON")
             .then(respuestaAlImprimir => {
                 if (respuestaAlImprimir === true) {
                     loguear("Impreso correctamente");
