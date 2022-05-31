@@ -1,18 +1,19 @@
 import Header from "./Components/header/Header";
-import { ConectorPlugin } from "../ConectorPlugin";
-
+import { ConectorPlugin } from "../Functions/ConectorPlugin";
 
 export default function Cuenta(){
+
     const ticket =()=>{
-        const conector = new ConectorPlugin()
-            conector.texto("HOLA MUNDO")
-            conector.imprimirEn("EPSON")
+
+        const imprimir = new ConectorPlugin()
+            imprimir.texto("HOLA MUNDO")
+            imprimir.imprimirEn("EPSON")
             .then(respuestaAlImprimir => {
-                console.log(respuestaAlImprimir)
                 if (respuestaAlImprimir === true) {
                     console.log("OK")
+                    console.log(respuestaAlImprimir)
                 } else {
-                    console.log("No OK")
+                    console.log("NOOK")
                 }
             });
     }

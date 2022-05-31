@@ -16,7 +16,7 @@ export const ConectorPlugin = (() => {
 
     class ConectorPlugin {
 
-        static URL_PLUGIN_POR_DEFECTO = "https://movie-page-theta.vercel.app";
+        static URL_PLUGIN_POR_DEFECTO = "http://localhost:8000";
         static OperacionTicket = Operacion;
         static Constantes = {
             AccionTextoConAcentos: "textoacentos",
@@ -181,10 +181,11 @@ export const ConectorPlugin = (() => {
                 operaciones: this.operaciones,
                 impresora: nombreImpresora,
             };
-            const respuestaRaw = await fetch(this.ruta + "/Imprimir", {
+            const respuestaRaw = await fetch(this.ruta + "/imprimir", {
                 method: "POST",
                 body: JSON.stringify(payload),
             });
+            console.log(respuestaRaw.body)
             return await respuestaRaw.json();
         }
     }
