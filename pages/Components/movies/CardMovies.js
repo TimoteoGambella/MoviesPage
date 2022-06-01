@@ -6,7 +6,7 @@ import { addFavMovies,removeFavMovies } from "../../../firebase/Firebase"
 import Button from "../buttons/button"
 import MovieDetail from "../moviesdetail/MoviesDetail"
 
-export default function CardMovies({movie,setMovieDetail}){
+export default function CardMovies({movie,setMovieDetail,site}){
 
     const router = useRouter()
 
@@ -35,7 +35,7 @@ export default function CardMovies({movie,setMovieDetail}){
     const detailsButton=async()=>{
         await trailerMovie(movie.id)
         await setMovieDetail(true)
-        router.replace(`/MovieDetail?id=${movie.id}`)
+        router.replace(`/MovieDetail?id=${movie.id}&site=${site}`)
     }
 
     return(

@@ -14,7 +14,7 @@ export default function ContainerMovies(){
     return(
         <div style={{backgroundColor:"black"}}>
 
-            {movies.length===0 && <Loader/>}
+            {movies.length===0 && <Loader classParam={"loader2"}/>}
             {movies.length!==0 && arrayMoviesBus.length===0 &&
                 <>
                     {!movieDetail?
@@ -22,16 +22,15 @@ export default function ContainerMovies(){
                             {movies.map(movie=>{
                                 return(
                                     <div key={movie.id}>
-                                        <CardMovies movie={movie} setMovieDetail={setMovieDetail} />
+                                        <CardMovies movie={movie} setMovieDetail={setMovieDetail} site={"Home"}/>
                                     </div>
                                 )
                             })}
                         </div>
                     :
-                        <MoviesDetail setMovieDetail={setMovieDetail}/>
+                        <></>
                     }
                 </>
-
             }
             {arrayMoviesBus.length!==0 && arrayMoviesBus!=="BusquedaFallida" &&
                     <>
@@ -40,13 +39,13 @@ export default function ContainerMovies(){
                                 {arrayMoviesBus.map(movie=>{
                                     return(
                                         <div key={movie.id}>
-                                            <CardMovies movie={movie} setMovieDetail={setMovieDetail} />
+                                            <CardMovies movie={movie} setMovieDetail={setMovieDetail} site={"Home"}/>
                                         </div>
                                     )
                                 })}
                             </div>
                         :
-                            <MoviesDetail setMovieDetail={setMovieDetail}/>
+                            <></>
                         }
                     </>
             }

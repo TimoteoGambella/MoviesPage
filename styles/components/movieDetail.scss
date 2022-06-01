@@ -52,4 +52,18 @@
             }
         }
     }
+    .genres-container{
+        width: 40vw;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1vw;
+        .genres{
+            width: -moz-fit-content !important;
+            width: fit-content !important;
+            min-height: 4vw !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            padding-left: 3vw !important;
+        }
+    }
 }

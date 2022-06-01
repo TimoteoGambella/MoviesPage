@@ -2,4 +2,13 @@
 
 $font:'Bebas Neue';
 $color-1:gold;
-$color-2:rgb(255, 230, 155);
+$color-2:#ffe69b;
+
+.site-title{
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 1vw;
+    margin-bottom: -1vw;
+    color: gold;
+    letter-spacing: 5px;
+}

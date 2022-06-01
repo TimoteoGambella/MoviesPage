@@ -1,6 +1,7 @@
 import '../styles/Styles.scss'
 import Head from 'next/head'
 import { Movies } from '../Context/MoviesContext'
+import { Genres } from '../Context/GenresContext'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,9 +16,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Movies>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"/>
+        <Genres>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"/>
 
-        <Component {...pageProps} />
+          <Component {...pageProps} />
+        </Genres>
       </Movies>
 
     </>

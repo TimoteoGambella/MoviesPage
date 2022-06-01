@@ -56,7 +56,7 @@ export default function Logearse({form,setForm,saveData}){
                 </div>
 
                 {!cargando && <Button info={"Ingresar"} />}
-                {cargando && <Loader info={"Registrar"} />}
+                {cargando && <Loader classParam={"loader"} />}
             </form>
 
             <p className="registarse" onClick={()=>setForm(!form)}>¿No tienes cuenta? Registrar</p>

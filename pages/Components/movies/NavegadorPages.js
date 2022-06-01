@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { MoviesContext } from "../../../Context/MoviesContext"
 import { useRouter } from "next/router"
 
@@ -6,10 +6,14 @@ export default function NavegadorPages(){
 
     const router = useRouter()
 
-    const {setPage}=useContext(MoviesContext)
+    const {page,setPage}=useContext(MoviesContext)
 
     const [pageNum,setPageNum]=useState(1)
 
+    useEffect(()=>{
+        setPageNum(page)
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
+    
     const handleAnterior = ()=>{
         if(pageNum===1){
             return

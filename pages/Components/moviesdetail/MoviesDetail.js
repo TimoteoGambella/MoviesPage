@@ -5,19 +5,28 @@ import Image from "next/image";
 import Button from "../buttons/button";
 import Estrellas from "./Estrellas";
 import { useRouter } from "next/router"
+import { GenresContext } from "../../../Context/GenresContext";
 
 export default function MoviesDetail({id}){
 
     const router = useRouter()
 
     const {movies,arrayMoviesBus,trailer}=useContext(MoviesContext)
+    const {genres}=useContext(GenresContext)
 
     const [movieD,setMovieD]=useState([])
+    const [site,setSite]=useState("")
 
     useEffect(() => {
         movieData()
     }, [movies]);// eslint-disable-line react-hooks/exhaustive-deps
     
+    useEffect(()=>{
+        if(site==="Home" || site==="Favs"){
+            router.replace("/"+site)
+        }
+    },[site])// eslint-disable-line react-hooks/exhaustive-deps
+
     const movieData=async()=>{
         if(arrayMoviesBus.length===0){
             const movie = await movies.filter(mov=>mov.id==id)
@@ -28,9 +37,14 @@ export default function MoviesDetail({id}){
         }
     }
 
+    const handleBack = ()=>{
+        let query= new URLSearchParams(window.location.search)
+        setSite(query.get("site"))
+    }
+    
     return(
         <div className="detail-container">
-            <div style={{width:"fit-content",margin:"auto"}} onClick={()=>{router.replace("/Home")}}>
+            <div style={{width:"fit-content",margin:"auto"}} onClick={()=>handleBack()}>
                 <Button info={"ATRAS"}/>
             </div>
             {movieD.length!==0 && 
@@ -51,6 +65,18 @@ export default function MoviesDetail({id}){
                         {movieD[0].vote_average==="" && <p>NO HAY VOTOS</p>}
                         {movieD[0].vote_average!=="" && 
                             <Estrellas rate={movieD[0].vote_average}/>
+                        }
+
+                        {movieD[0].genre_ids==="" && <p>NO HAY GENEROS</p>}
+                        {movieD[0].genre_ids!=="" && 
+                            <div className="genres-container">
+                                {movieD[0].genre_ids.map(res=>{
+                                    const genreID = genres.filter(gen=>gen.id===res)
+                                    return(
+                                        <p key={res} className="genres">{genreID[0].name}</p>
+                                    )
+                                })}
+                            </div>
                         }
                     </div>
                 </div>

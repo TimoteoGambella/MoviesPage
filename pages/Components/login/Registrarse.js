@@ -116,7 +116,7 @@ export default function Registrarse({form,setForm,saveData}){
                 </div>
 
                 {!cargando && <Button info={"Registrar"} click={""}/>}
-                {cargando && <Loader info={"Registrar"} click={""}/>}
+                {cargando && <Loader classParam={"loader"}/>}
             </form>
 
             <p className="logearse" onClick={()=>setForm(!form)}>¿Ya tienes cuenta? Ingresar</p>

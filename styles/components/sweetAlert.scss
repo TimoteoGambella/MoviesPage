@@ -3,9 +3,16 @@
     border-radius: 2vw;
     .swal-icon--error{
         border-color: black;
+        background-color: transparent;
         .swal-icon--error__line{
             background-color: black;
         }
+    }
+    .swal-title{
+        background-color: transparent;
+    }
+    .swal-footer{
+        background-color: transparent;
     }
     .swal-text{
         font-weight: 600;

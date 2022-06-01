@@ -1,9 +1,9 @@
 import React from "react"
 
-export default function Loader(){
+export default function Loader({classParam}){
     return(
         <div id="contenedor">
-            <div className="loader" id="loader">Loading...</div>
+            <div className={classParam} id="loader">Loading...</div>
         </div>
     )
 }

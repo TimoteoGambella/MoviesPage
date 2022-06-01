@@ -25,7 +25,8 @@ export default function Home() {
 
   return (
     <div>
-      <Header/>
+      <Header active={"Home"}/>
+      <p className="site-title">INICIO</p>
       <ContainerMovies/>
     </div>
   )

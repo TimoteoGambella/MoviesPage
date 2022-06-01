@@ -31,4 +31,12 @@
             color: $color-2 !important;
         }
     }
+    .active{
+        background-color: transparent !important;
+        transform: scale(1.8);
+        color: $color-2 !important;
+        &:hover{
+            transform: scale(1.8) !important;
+        }
+    }
 }
