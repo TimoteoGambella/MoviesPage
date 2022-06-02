@@ -10,7 +10,7 @@ export const ConectorPlugin = (() => {
 
     class ConectorPlugin {
 
-        static URL_PLUGIN_POR_DEFECTO = "http://localhost:8000";
+        static URL_PLUGIN_POR_DEFECTO = "http://localhost:3000";
         static OperacionTicket = Operacion;
         static Constantes = {
             AccionTextoConAcentos: "textoacentos",
