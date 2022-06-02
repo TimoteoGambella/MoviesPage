@@ -11,6 +11,7 @@ export default function NavegadorPages(){
     const [pageNum,setPageNum]=useState(1)
     const [disableNavPages,setDisableNavPages]=useState(false)
 
+    
     useEffect(()=>{
         setPageNum(page)
     },[])// eslint-disable-line react-hooks/exhaustive-deps
@@ -26,6 +27,7 @@ export default function NavegadorPages(){
             setDisableNavPages(false)
         }
     },[arrayMoviesBus])// eslint-disable-line react-hooks/exhaustive-deps
+
 
     const handleAnterior = ()=>{
         if(pageNum===1){
