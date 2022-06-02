@@ -19,20 +19,38 @@ export function Movies ({children}){
     const [valueBuscador,setValueBuscador]=useState("")
 
     useEffect(() => {
-        const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&page=${page}&include_adult=false`
-        axios.get(endPoint)
-        .then(res=>{
-            const apiData = res.data
-            setMovies(apiData.results)
-        })
-        .catch(error=>{
-                swAlert("Hubo errores. Intenta mas tarde","","error")
+        if(valueBuscador!==""){
+            const endPoint= `https://api.themoviedb.org/3/search/movie?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&page=${page}&query=${valueBuscador}&include_adult=false`
+            
+            axios.get(endPoint)
+            .then(res=>{
+                const apiData=res.data
+                if(apiData.results.length===0){
+                    setArrayMoviesBus("BusquedaFallida")
+                }else{
+                    setArrayMoviesBus(apiData.results)
+                }
+                setValueBuscador(bus)
             })
+            .catch(error=>{
+                // swAlert("Hubo errores. Intenta mas tarde","","error")
+            })
+        }else{
+            const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&page=${page}&include_adult=false`
+            axios.get(endPoint)
+            .then(res=>{
+                const apiData = res.data
+                setMovies(apiData.results)
+            })
+            .catch(error=>{
+                    swAlert("Hubo errores. Intenta mas tarde","","error")
+                })
+        }
     }, [page])// eslint-disable-line react-hooks/exhaustive-deps
     
     const moviesBus =(bus,busState)=>{
         if(bus.length>2){
-            const endPoint= `https://api.themoviedb.org/3/search/movie?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&query=${bus}&include_adult=false`
+            const endPoint= `https://api.themoviedb.org/3/search/movie?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&page=${page}&query=${bus}&include_adult=false`
             
             axios.get(endPoint)
             .then(res=>{

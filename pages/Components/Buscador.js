@@ -3,13 +3,14 @@ import { MoviesContext } from "../../Context/MoviesContext"
 
 export default function Buscador(){
 
-    const {moviesBus,stateBuscador,valueBuscador}=useContext(MoviesContext)
+    const {setPage,moviesBus,valueBuscador}=useContext(MoviesContext)
 
     const [dataBus,setDataBus]=useState("")
     const [busState,setBusState]=useState(false)
     const [pathname,setPathname]=useState(true)
 
     const changeBuscador=()=>{
+        setPage(1)
         setBusState(true)
         setDataBus(document.getElementById("buscador").value)
     }

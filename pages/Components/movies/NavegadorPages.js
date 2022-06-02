@@ -14,6 +14,10 @@ export default function NavegadorPages(){
         setPageNum(page)
     },[])// eslint-disable-line react-hooks/exhaustive-deps
     
+    useEffect(()=>{
+        setPageNum(page)
+    },[page])// eslint-disable-line react-hooks/exhaustive-deps
+
     const handleAnterior = ()=>{
         if(pageNum===1){
             return
