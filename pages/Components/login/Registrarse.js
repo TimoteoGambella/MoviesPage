@@ -22,7 +22,9 @@ export default function Registrarse({form,setForm,saveData}){
             mail:document.getElementById("mail").value.trim(),
             user:document.getElementById("user").value,
             password:document.getElementById("password").value,
-            name:document.getElementById("name").value
+            name:document.getElementById("name").value,
+            favsMovies:[],
+            vistoMovies:[]
         })
     }
 

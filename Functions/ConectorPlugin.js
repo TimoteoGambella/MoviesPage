@@ -178,7 +178,7 @@ export const ConectorPlugin = (() => {
             };
             const respuestaRaw = await fetch(this.ruta + "/imprimir", {
                 method: "POST",
-                body: JSON.stringify(payload),//"mode" : "no-cors",
+                body: JSON.stringify(payload),
             });
             return await respuestaRaw.json();
         }

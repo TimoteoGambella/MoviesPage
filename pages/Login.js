@@ -15,10 +15,7 @@ export default function Login(){
 
     useEffect(()=>{
         if(ValidationStorage()){
-            const token = localStorage.getItem("tokenMovies")
-            favMoviesDB(token).then(res=>{
-                router.replace("/Home")
-            })
+            router.replace("/Home")
         }
     },[])// eslint-disable-line react-hooks/exhaustive-deps
 

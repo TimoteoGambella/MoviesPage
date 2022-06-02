@@ -1,7 +1,7 @@
 import { useEffect,useState, createContext } from "react";
 import axios from "axios";
 import swAlert from "sweetalert";
-import { getFavMovies } from "../firebase/Firebase";
+import { getFavMovies, getVistoMovies } from "../firebase/Firebase";
 
 export const MoviesContext = createContext();
 
@@ -9,6 +9,7 @@ export function Movies ({children}){
 
     const [movies,setMovies]=useState([])
     const [favMovies,setFavMovies]=useState([])
+    const [vistoMovies,setVistoMovies]=useState([])
     const[arrayMoviesBus,setArrayMoviesBus]=useState([])
 
     const [page,setPage]=useState(1)
@@ -84,7 +85,11 @@ export function Movies ({children}){
             setFavMovies(res[0].favsMovies)
         })
     }
-
+    const vistoMoviesDB= async(idUser)=>{
+        await getVistoMovies(idUser).then(res=>{
+            setVistoMovies(res[0].vistoMovies)
+        })
+    }
 
     const trailerMovie = (idMovie)=>{
 
@@ -101,7 +106,10 @@ export function Movies ({children}){
     }
 
     return(
-        <MoviesContext.Provider value={{movies,setPage,page,moviesBus,arrayMoviesBus,favMovies,setFavMovies,favMoviesDB,trailerMovie,trailer,clearArrayMoviesBus,stateBuscador,valueBuscador}}>
+        <MoviesContext.Provider
+            value={{movies,setPage,page,moviesBus,arrayMoviesBus,favMovies,setFavMovies,favMoviesDB,
+            trailerMovie,trailer,clearArrayMoviesBus,stateBuscador,valueBuscador,vistoMovies,setVistoMovies,vistoMoviesDB}}
+        >
             {children}
         </MoviesContext.Provider>
     )

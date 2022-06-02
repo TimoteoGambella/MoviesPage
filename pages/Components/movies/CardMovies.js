@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Card } from "react-bootstrap"
 import { useRouter } from "next/router"
 import { MoviesContext } from "../../../Context/MoviesContext"
-import { addFavMovies,removeFavMovies } from "../../../firebase/Firebase"
+import { addFavMovies,addVistoMovies,removeFavMovies, removeVistoMovies } from "../../../firebase/Firebase"
 import Button from "../buttons/button"
 import MovieDetail from "../moviesdetail/MoviesDetail"
 
@@ -10,17 +10,29 @@ export default function CardMovies({movie,setMovieDetail,site}){
 
     const router = useRouter()
 
-    const {favMovies,setFavMovies,trailerMovie}=useContext(MoviesContext)
+    const {favMovies,setFavMovies,trailerMovie,vistoMovies,setVistoMovies,vistoMoviesDB}=useContext(MoviesContext)
 
     const [favButton,setFavButton]=useState(false)
     const [vistoButton,setVistoButton]=useState(false)
     
     useEffect(()=>{
-        const movieFav = favMovies.filter(mov=>mov.title===movie.title)
-        if(movieFav.length!==0){
-            setFavButton(true)
+        if(favMovies.length!==0){
+            const movieFav = favMovies.filter(mov=>mov.title===movie.title)
+            if(movieFav.length!==0){
+                setFavButton(true)
+            }
         }
     },[favMovies])// eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(()=>{
+        if(vistoMovies.length!==0){
+            const movieVisto = vistoMovies.filter(mov=>mov.title===movie.title)
+            if(movieVisto.length!==0){
+                setVistoButton(true)
+            }
+        }
+    },[vistoMovies])// eslint-disable-line react-hooks/exhaustive-deps
+
 
     const addFavMoviesButton=()=>{
         setFavMovies(favMovies=>[...favMovies,movie])
@@ -33,10 +45,15 @@ export default function CardMovies({movie,setMovieDetail,site}){
     }
     
 
-    // const addVistoMoviesButton=()=>{
-    //     setFavMovies(favMovies=>[...favMovies,movie])
-    //     addFavMovies(localStorage.getItem("tokenMovies"),[...favMovies,movie])
-    // }
+    const addVistoMoviesButton=()=>{
+        setVistoMovies(vistoMovies=>[...vistoMovies,movie])
+        addVistoMovies(localStorage.getItem("tokenMovies"),[...vistoMovies,movie])
+    }
+    const removeVistoMoviesButton= ()=>{
+        const remMovie=vistoMovies.filter(mov=>mov.title!==movie.title)
+        setVistoMovies(remMovie)
+        removeVistoMovies(localStorage.getItem("tokenMovies"),remMovie)
+    }
 
 
     const detailsButton=async()=>{
@@ -53,9 +70,9 @@ export default function CardMovies({movie,setMovieDetail,site}){
                     <Card.Body className={vistoButton?"visto":""}>
                         
                         {vistoButton?
-                            <button className="visto-btn" onClick={()=>{setVistoButton(!vistoButton)}}>Visto</button>
+                            <button className="visto-btn" onClick={()=>{removeVistoMoviesButton(),setVistoButton(!vistoButton)}}>Visto</button>
                         :
-                            <button className="visto-btn visto-btn-2" onClick={()=>{setVistoButton(!vistoButton)}}>Visto</button>
+                            <button className="visto-btn visto-btn-2" onClick={()=>{addVistoMoviesButton(),setVistoButton(!vistoButton)}}>Visto</button>
                         }
 
                         <button className="favourite-btn" onClick={()=>{addFavMoviesButton(),setFavButton(!favButton)}}

@@ -9,7 +9,7 @@ export default function Home() {
 
   const router = useRouter()
 
-  const {favMoviesDB}=useContext(MoviesContext)
+  const {favMoviesDB,vistoMoviesDB}=useContext(MoviesContext)
 
   useEffect(()=>{
     if(!ValidationStorage()){
@@ -17,6 +17,8 @@ export default function Home() {
     }else{
       const token = localStorage.getItem("tokenMovies")
       favMoviesDB(token).then(res=>{
+      })
+      vistoMoviesDB(token).then(res=>{
       })
     }
   },[])// eslint-disable-line react-hooks/exhaustive-deps

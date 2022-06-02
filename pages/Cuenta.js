@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ValidationStorage } from "../Functions/ValidationStorage";
 import Header from "./Components/header/Header";
 import { useRouter } from "next/router"
-import { ConectorPlugin } from "../Functions/imprimirTick";
+import { ConectorPlugin } from "../Functions/ConectorPlugin";
 
 export default function Cuenta(){
     const router = useRouter()

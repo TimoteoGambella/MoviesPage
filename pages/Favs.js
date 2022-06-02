@@ -11,7 +11,7 @@ export default function Favs(){
 
     const router = useRouter()
 
-    const {favMovies,favMoviesDB}=useContext(MoviesContext)
+    const {favMovies,favMoviesDB,vistoMovies,vistoMoviesDB}=useContext(MoviesContext)
 
     const [movieDetail,setMovieDetail]=useState(false)
     const [busquedaTerminada,setBusquedaTerminada]=useState(false)
@@ -22,6 +22,7 @@ export default function Favs(){
         }else if(favMovies.length===0){
             const token = localStorage.getItem("tokenMovies")
             favMoviesDB(token)
+            vistoMoviesDB(token)
             setBusquedaTerminada(true)
         }
     },[])// eslint-disable-line react-hooks/exhaustive-deps

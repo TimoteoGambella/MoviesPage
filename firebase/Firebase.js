@@ -26,6 +26,8 @@ const firebaseConfig = {
     return(user)
   }
 
+
+
   export const getFavMovies = async(idUser)=>{
     const users = await usersData()
     return(users.filter(user=>user.id===idUser))
@@ -41,6 +43,9 @@ const firebaseConfig = {
     await setDoc(user, { favsMovies: movie }, { merge: true });
   }
 
+
+
+  
   export const getVistoMovies = async(idUser)=>{
     const users = await usersData()
     return(users.filter(user=>user.id===idUser))
