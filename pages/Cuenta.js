@@ -23,19 +23,20 @@ export default function Cuenta(){
             console.log(impresoras)
         });
 
-    // let conector = new ConectorPlugin();
-    // conector.establecerTamanioFuente(1, 1);
-    // conector.establecerEnfatizado(0);
-    // conector.establecerJustificacion(ConectorPlugin.Constantes.AlineacionCentro);
-    // conector.texto("Parzibyte's blog\n");
-    // conector.imprimirEn("OneNote (Desktop)")
-    //     .then(respuestaAlImprimir => {
-    //         if (respuestaAlImprimir === true) {
-    //             console.log("OK")
-    //         } else {
-    //             console.log("NO OK")
-    //         }
-    //     });
+    let conector = new ConectorPlugin();
+    conector.establecerTamanioFuente(1, 1);
+    conector.establecerEnfatizado(0);
+    conector.establecerJustificacion(ConectorPlugin.Constantes.AlineacionCentro);
+    conector.texto("FELIZ CUMPLEAÑOS CARUGA 🤍\n");
+    conector.texto("Timo y Fede")
+    conector.imprimirEn("EPSON TM-T20II Receipt")
+        .then(respuestaAlImprimir => {
+            if (respuestaAlImprimir === true) {
+                console.log("OK")
+            } else {
+                console.log("NO OK")
+            }
+        });
     }
 
     return(
