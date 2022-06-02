@@ -93,7 +93,7 @@ export function Movies ({children}){
 
     const trailerMovie = (idMovie)=>{
 
-        const endPoint = `https://api.themoviedb.org/3/movie/${idMovie}/videos?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES`
+        const endPoint = `https://api.themoviedb.org/3/movie/${idMovie}/videos?api_key=ffe8f0441019f353fa52077fa24c7f36&language=es-ES&include_adult=false`
         axios.get(endPoint)
         .then(res=>{
             setTrailer(res.data.results[0].key)

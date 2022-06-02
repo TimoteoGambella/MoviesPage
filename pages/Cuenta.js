@@ -18,20 +18,24 @@ export default function Cuenta(){
     },[])// eslint-disable-line react-hooks/exhaustive-deps
 
     const tick =()=>{
-
-    let conector = new ConectorPlugin();
-    conector.establecerTamanioFuente(1, 1);
-    conector.establecerEnfatizado(0);
-    conector.establecerJustificacion(ConectorPlugin.Constantes.AlineacionCentro);
-    conector.texto("Parzibyte's blog\n");
-    conector.imprimirEn("OneNote (Desktop)")
-        .then(respuestaAlImprimir => {
-            if (respuestaAlImprimir === true) {
-                console.log("OK")
-            } else {
-                console.log("NO OK")
-            }
+        ConectorPlugin.obtenerImpresoras()
+            .then(impresoras => {                    
+            console.log(impresoras)
         });
+
+    // let conector = new ConectorPlugin();
+    // conector.establecerTamanioFuente(1, 1);
+    // conector.establecerEnfatizado(0);
+    // conector.establecerJustificacion(ConectorPlugin.Constantes.AlineacionCentro);
+    // conector.texto("Parzibyte's blog\n");
+    // conector.imprimirEn("OneNote (Desktop)")
+    //     .then(respuestaAlImprimir => {
+    //         if (respuestaAlImprimir === true) {
+    //             console.log("OK")
+    //         } else {
+    //             console.log("NO OK")
+    //         }
+    //     });
     }
 
     return(
