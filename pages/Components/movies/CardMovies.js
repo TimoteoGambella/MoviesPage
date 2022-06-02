@@ -13,6 +13,7 @@ export default function CardMovies({movie,setMovieDetail,site}){
     const {favMovies,setFavMovies,trailerMovie}=useContext(MoviesContext)
 
     const [favButton,setFavButton]=useState(false)
+    const [vistoButton,setVistoButton]=useState(false)
     
     useEffect(()=>{
         const movieFav = favMovies.filter(mov=>mov.title===movie.title)
@@ -30,6 +31,12 @@ export default function CardMovies({movie,setMovieDetail,site}){
         setFavMovies(remMovie)
         removeFavMovies(localStorage.getItem("tokenMovies"),remMovie)
     }
+    
+
+    // const addVistoMoviesButton=()=>{
+    //     setFavMovies(favMovies=>[...favMovies,movie])
+    //     addFavMovies(localStorage.getItem("tokenMovies"),[...favMovies,movie])
+    // }
 
 
     const detailsButton=async()=>{
@@ -43,17 +50,23 @@ export default function CardMovies({movie,setMovieDetail,site}){
             {movie!==undefined && 
                 <Card>
                     <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="NOT FOUND"/>
-                    <Card.Body>
+                    <Card.Body className={vistoButton?"visto":""}>
                         
+                        {vistoButton?
+                            <button className="visto-btn" onClick={()=>{setVistoButton(!vistoButton)}}>Visto</button>
+                        :
+                            <button className="visto-btn visto-btn-2" onClick={()=>{setVistoButton(!vistoButton)}}>Visto</button>
+                        }
+
                         <button className="favourite-btn" onClick={()=>{addFavMoviesButton(),setFavButton(!favButton)}}
                         style={{display:!favButton?"block":"none"}}>🤍</button>
 
                         <button className="favourite-btn favourite-btn-red" onClick={()=>{removeFavMoviesButton(),setFavButton(!favButton)}}
                         style={{display:favButton?"block":"none"}}>❤️</button>
 
-                        <Card.Title>{movie.title}</Card.Title>
+                        <Card.Title className={vistoButton?"title-visto":""}>{movie.title}</Card.Title>
 
-                        <div style={{width:"fit-content",margin:"auto"}} onClick={()=>detailsButton()}>
+                        <div style={{width:"fit-content",margin:"auto",backgroundColor:"transparent"}} onClick={()=>detailsButton()}>
                             <Button info={"Detalles"}/>
                         </div>
                     </Card.Body>

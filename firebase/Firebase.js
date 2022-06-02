@@ -40,3 +40,18 @@ const firebaseConfig = {
     const user =  doc(db, 'Users', idUser);
     await setDoc(user, { favsMovies: movie }, { merge: true });
   }
+
+  export const getVistoMovies = async(idUser)=>{
+    const users = await usersData()
+    return(users.filter(user=>user.id===idUser))
+  }
+
+  export const addVistoMovies = async(idUser,movie)=>{
+    const user =  doc(db, 'Users', idUser);
+    await setDoc(user, { vistoMovies: movie }, { merge: true });
+  }
+
+  export const removeVistoMovies = async(idUser,movie)=>{
+    const user =  doc(db, 'Users', idUser);
+    await setDoc(user, { vistoMovies: movie }, { merge: true });
+  }

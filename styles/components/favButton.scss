@@ -1,7 +1,7 @@
 .favourite-btn{
     width: 30px;
     height: 30px;
-    background-color: aquamarine;
+    background-color: $color-2;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -14,4 +14,26 @@
     &:hover{
         transform: scale(1.1);
     }
+}
+.visto-btn{
+    width: 3.5rem;
+    height: 30px;
+    background-color: $color-2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-top: none;
+    font-size: 15px;
+    font-weight: 900;
+    color: green;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.visto-btn-2{
+    color: red;
 }

@@ -14,6 +14,10 @@ export default function ContainerMovies(){
     return(
         <div style={{backgroundColor:"black"}}>
 
+            <div style={{marginTop:"2vw",marginBottom:"-5vw"}}>
+                {!movieDetail && <NavegadorPages/>}
+            </div>
+
             {movies.length===0 && <Loader classParam={"loader2"}/>}
             {movies.length!==0 && arrayMoviesBus.length===0 &&
                 <>
