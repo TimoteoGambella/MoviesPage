@@ -26,6 +26,12 @@ const firebaseConfig = {
     return(user)
   }
 
+  export const changePassword = async(idUser,pass)=>{
+    const user =  doc(db, 'Users', idUser);
+    await setDoc(user, { password: pass }, { merge: true });
+    return(true)
+  }
+
 
 
   export const getFavMovies = async(idUser)=>{
