@@ -1,0 +1,39 @@
+@media (max-width:700px){
+    .container-card{
+        .card-body{
+            padding: .4rem;
+        }
+        .card{
+            width: 12rem;
+            margin:1vw;
+        }
+        .card-title{
+            min-height: 12vw;
+            max-height: 12vw;
+        }
+    }
+}
+@media (max-width:470px){
+    .container-card{
+        .card{
+            width: 11rem;
+            margin:1vw;
+        }
+        .card-title{
+            min-height: 18vw;
+            max-height: 18vw;
+        }
+    }
+}
+@media (max-width:380px){
+    .container-card{
+        .card{
+            width: 9.5rem;
+            margin: .5vw;
+        }
+        .card-title{
+            min-height: 22vw;
+            max-height: 22vw;
+        }
+    }
+}

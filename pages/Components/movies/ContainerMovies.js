@@ -55,7 +55,7 @@ export default function ContainerMovies(){
             }
             {arrayMoviesBus==="BusquedaFallida"&&
                 <div className="movies-container">
-                    <p style={{color:"gold",fontSize:"2vw"}}>No se encontraron resultados</p>
+                    <p style={{color:"gold",fontSize:"2rem",textAlign:"center"}}>No se encontraron resultados</p>
                 </div>
             }
             
