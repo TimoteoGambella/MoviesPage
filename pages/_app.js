@@ -28,9 +28,9 @@ function MyApp({ Component, pageProps }) {
         <title>Movies Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta charSet="utf-8"/>
-        <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
-	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
-        <meta name="theme-color" content="#084444"/>
+        <meta name="description" content="Pagina web de peliculas. Podes mantener una lista de peliculas favoritas, marcarlas como vistas y mas."/>
+	      <meta name="keywords" content="peliculas, movies, pagina, timoteo, gambella, netflix, pelis, movie, api"/>
+        <meta name="theme-color" content="#ffd900"/>
       </Head>
 
       <Movies>
