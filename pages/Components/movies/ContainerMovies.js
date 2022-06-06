@@ -11,7 +11,6 @@ export default function ContainerMovies(){
 
     const [movieDetail,setMovieDetail]=useState(false)
 
-    console.log(movies)
     return(
         <div style={{backgroundColor:"black"}}>
 

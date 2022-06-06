@@ -54,7 +54,6 @@ export default function Logearse({form,setForm,saveData}){
                     swal("INCORRECTO","NO SE ENCONTRO EL MAIL","info")
                     setCargando2(false)
                 }else{
-                    console.log(emailUser)
                     const array= {
                         nombre:emailUser[0].name,
                         contrasena:emailUser[0].password,
