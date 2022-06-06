@@ -107,7 +107,7 @@ export default function Registrarse({form,setForm,saveData}){
                     </span>
                 </div>
                 <div className="input">
-                    <div className="input-pass">
+                    <div className="input-pass input-pass2">
                         <input className="form-input" id="password2" autoComplete="off" placeholder="Repetir contraseña" type={typeInput?"password":"text"} onChangeCapture={changeValues}
                         {...register("password2",{required:true,pattern:/^[a-zA-Z0-9]*$/})}/>
                     </div>

@@ -1,0 +1,80 @@
+@media (max-width:850px){
+    .registrarse-container{
+        p{
+            font-size: 5vw;
+        }
+        .input{
+            width: 40vw;
+            .form-input{
+                font-size: 2vw;
+            }
+            .input-pass{
+                width: 40vw;
+            }
+        }
+        .logearse{
+            font-size: 2.5vw;
+        }
+    }
+}
+@media (max-width:700px){
+    .registrarse-container{
+        p{
+            font-size: 6vw;
+        }
+        .input{
+            width: 50vw;
+            .form-input{
+                font-size: 2.8vw;
+            }
+            .input-pass{
+                width: 50vw;
+            }
+        }
+        .logearse{
+            font-size: 3.5vw;
+        }
+    }
+}
+@media (max-width:520px){
+    .registrarse-container{
+        p{
+            font-size: 8vw;
+        }
+        .input{
+            width: 65vw;
+            .form-input{
+                font-size: 3.5vw;
+                font-weight: 700;
+            }
+            .input-pass{
+                width: 65vw;
+            }
+        }
+        .logearse{
+            font-size: 4.5vw;
+        }
+    }
+}
+@media (max-width:400px){
+    .registrarse-container{
+        p{
+            font-size: 10vw;
+        }
+        .input{
+            width: 75vw;
+            .form-input{
+                font-size: 4vw;
+            }
+            .input-pass{
+                width: 75vw;
+            }
+            .input-pass2{
+                margin-bottom: 3vw;
+            }
+        }
+        .logearse{
+            font-size: 6vw;
+        }
+    }
+}
