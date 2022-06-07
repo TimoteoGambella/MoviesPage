@@ -1,3 +1,10 @@
+@media (max-width:900px){
+    .container-button-login{
+        .button-login-page{
+            font-size: 3.5vw !important;
+        }
+    }
+}
 @media (max-width:850px){
     .container-button-login{
         .button-login {
@@ -10,6 +17,9 @@
         .button-login {
             font-size: 3.5vw;
         }
+        .button-login-page{
+            font-size: 4.5vw !important;
+        }
     }
 }
 @media (max-width:520px){
@@ -17,12 +27,19 @@
         .button-login {
             font-size: 5vw;
         }
+        .button-login-page{
+            margin-top: 5vw;
+            font-size: 5.5vw !important;
+        }
     }
 }
 @media (max-width:400px){
     .container-button-login{
         .button-login {
             font-size: 7vw;
+        }
+        .button-login-page{
+            font-size: 6.5vw !important;
         }
     }
 }

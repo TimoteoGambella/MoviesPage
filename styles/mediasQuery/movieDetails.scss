@@ -1,0 +1,110 @@
+@media (max-width:900px){
+    .detail-container{
+        .trailer-container{
+            width: 55vw;
+            height: 30vw;
+        }
+        .info-movie{
+            h1{
+                width: 45vw;
+                font-size: 3.5vw;
+            }
+            p{
+                width: 45vw;
+                padding-top: 2vw;
+                margin-top: 2vw;
+                font-size: 2vw;
+                min-height: 20vw;
+                max-height: 20vw;
+            }
+        }
+        .title-trailer{
+            font-size:4vw;
+        }
+    }
+}
+@media (max-width:768px){
+    .detail-container{
+        .trailer-container{
+            width: 70vw;
+            height: 40vw;
+        }
+        .info-movie{
+            h1{
+                width: 50vw;
+                font-size: 4.5vw;
+                max-height: 12vw;
+            }
+            p{
+                width: 50vw;
+                font-size: 2.5vw;
+                min-height: 21vw;
+                max-height: 21vw;
+            }
+        }
+        .estrellas-container{
+            span{
+                height: auto;
+                width: 4.5vw !important;
+            }
+        }
+        .genres-container{
+            .genres{
+                font-size: 2.6vw;
+            }
+        }
+        .title-trailer{
+            font-size:5vw;
+        }
+    }
+}
+@media (max-width:600px){
+    .detail-container{
+        .trailer-container{
+            margin-bottom: 20vw;
+            margin-top: 12vw;
+        }
+        .info-movie{
+            flex-direction: column;
+            text-align: center;
+            margin-top: 10vw;
+            h1{
+                width: 100%;
+                font-size: 5vw;
+                max-height: 12vw;
+                padding-top: 2vw;
+                padding-bottom: 2vw;
+                max-height: none !important;
+                overflow-y: hidden !important;
+            }
+            p{
+                width: 90%;
+                margin: auto;
+                font-size: 3.5vw;
+                min-height: 25vw;
+                max-height: 25vw;
+                padding-bottom: 2vw;
+                margin-bottom: 5vw;
+            }
+        }
+        .estrellas-container{
+            margin: auto;
+            width: 100%;
+            span{
+                width: 6vw !important;
+            }
+        }
+        .genres-container{
+            width: 100%;
+            margin-top: 4vw;
+            justify-content: center;
+            .genres{
+                text-align: center;
+                font-size: 4vw;
+            }
+        }
+        .title-trailer{
+            font-size: 6vw;
+        }
+    }
+}

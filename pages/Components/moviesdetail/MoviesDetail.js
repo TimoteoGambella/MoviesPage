@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { MoviesContext } from "../../../Context/MoviesContext";
 import Image from "next/image";
-import Button from "../buttons/button";
+import Button, { ButtonPage } from "../buttons/button";
 import Estrellas from "./Estrellas";
 import { useRouter } from "next/router"
 import { GenresContext } from "../../../Context/GenresContext";
@@ -45,7 +45,7 @@ export default function MoviesDetail({id}){
     return(
         <div className="detail-container">
             <div style={{width:"fit-content",margin:"auto"}} onClick={()=>handleBack()}>
-                <Button info={"ATRAS"}/>
+                <ButtonPage info={"ATRAS"}/>
             </div>
             {movieD.length!==0 && 
                 <div className="info-movie">
@@ -84,7 +84,7 @@ export default function MoviesDetail({id}){
             {trailer==="BusquedaFallida" && <p style={{textAlign:"center",color:"gold",fontSize:"3vw"}}>SIN TRAILER</p>}
             {trailer!=="" && trailer!=="BusquedaFallida" &&
                 <div className="trailer-container">
-                    <p style={{textAlign:"center",color:"gold",fontSize:"3vw",marginTop:"-4vw"}}>TRAILER</p>
+                    <p className="title-trailer">TRAILER</p>
                     <iframe className="trailer" width="560" height="315" src={`https://www.youtube-nocookie.com/embed/${trailer}?rel=0`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
             }
