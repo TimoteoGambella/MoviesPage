@@ -1,0 +1,22 @@
+@media(max-width:600px){
+    .cambio-container{
+        input{
+            width: 70%;
+        }
+    }
+}
+@media(max-width:480px){
+    .cuenta-container{
+        width: 90%;
+        p{
+            font-size: 1.8rem;
+        }
+    }
+}
+@media(max-width:400px){
+    .cambio-container{
+        input{
+            width: 95%;
+        }
+    }
+}
