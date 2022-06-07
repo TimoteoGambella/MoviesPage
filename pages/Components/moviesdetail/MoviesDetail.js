@@ -49,7 +49,7 @@ export default function MoviesDetail({id}){
             </div>
             {movieD.length!==0 && 
                 <div className="info-movie">
-                    {movieD[0].poster_path === "" && <p>NO HAY POSTER</p>}
+                    {movieD[0].poster_path === "" && <p style={{textAlign:"center",color:"gold",fontSize:"3rem"}}>NO HAY POSTER</p>}
                     {movieD[0].poster_path !== "" && 
                         <div>
                             <Image src={`https://image.tmdb.org/t/p/w500/${movieD[0].poster_path}`} width={238} height={382} alt={movieD[0].title}/>
@@ -57,17 +57,17 @@ export default function MoviesDetail({id}){
                     }
                     <div>
                         <h1>{movieD[0].title}</h1>
-                        {movieD[0].overview === "" && <p>NO HAY REVIEW</p>}
+                        {movieD[0].overview === "" && <p style={{textAlign:"center",color:"gold",fontSize:"2.5rem"}}>NO HAY REVIEW</p>}
                         {movieD[0].overview !== "" && 
                             <p>{movieD[0].overview}</p>
                         }
 
-                        {movieD[0].vote_average==="" && <p>NO HAY VOTOS</p>}
+                        {movieD[0].vote_average==="" && <p style={{textAlign:"center",color:"gold",fontSize:"3rem"}}>NO HAY VOTOS</p>}
                         {movieD[0].vote_average!=="" && 
                             <Estrellas rate={movieD[0].vote_average}/>
                         }
 
-                        {movieD[0].genre_ids==="" && <p>NO HAY GENEROS</p>}
+                        {movieD[0].genre_ids==="" && <p style={{textAlign:"center",color:"gold",fontSize:"3rem"}}>NO HAY GENEROS</p>}
                         {movieD[0].genre_ids!=="" && 
                             <div className="genres-container">
                                 {movieD[0].genre_ids.map(res=>{
@@ -81,7 +81,7 @@ export default function MoviesDetail({id}){
                     </div>
                 </div>
             }
-            {trailer==="BusquedaFallida" && <p style={{textAlign:"center",color:"gold",fontSize:"3vw"}}>SIN TRAILER</p>}
+            {trailer==="BusquedaFallida" && <p style={{textAlign:"center",color:"gold",fontSize:"3rem"}}>SIN TRAILER</p>}
             {trailer!=="" && trailer!=="BusquedaFallida" &&
                 <div className="trailer-container">
                     <p className="title-trailer">TRAILER</p>
