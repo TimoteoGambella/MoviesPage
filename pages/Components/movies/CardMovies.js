@@ -66,7 +66,7 @@ export default function CardMovies({movie,setMovieDetail,site}){
         <div className="container-card">
             {movie!==undefined && 
                 <Card>
-                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="NOT FOUND"/>
+                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} onClick={()=>detailsButton()} alt="NOT FOUND"/>
                     <Card.Body className={vistoButton?"visto":""}>
                         
                         {vistoButton?
@@ -76,7 +76,7 @@ export default function CardMovies({movie,setMovieDetail,site}){
                         }
 
                         <button className="favourite-btn" onClick={()=>{addFavMoviesButton(),setFavButton(!favButton)}}
-                        style={{display:!favButton?"block":"none"}}>🤍</button>
+                        style={{display:!favButton?"block":"none"}}>🖤</button>
 
                         <button className="favourite-btn favourite-btn-red" onClick={()=>{removeFavMoviesButton(),setFavButton(!favButton)}}
                         style={{display:favButton?"block":"none"}}>❤️</button>

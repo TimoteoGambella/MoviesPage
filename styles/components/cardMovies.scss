@@ -4,6 +4,7 @@
         width: 14rem;
         border: 1px solid $color-1;
         overflow: hidden;
+        background-color: black;
     }
     .visto{
         background-color: rgb(111, 180, 111) !important;
@@ -11,6 +12,8 @@
     .card-img-top{
         min-height: 28vw;
         overflow: hidden;
+        transition: 2s;
+        cursor: pointer;
         &:hover{
             transform: scale(1.1);
         }
