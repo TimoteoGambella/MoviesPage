@@ -26,7 +26,8 @@ export default function Logearse({form,setForm,saveData}){
         usersData().then(res=>{
             
             const isUserIn = res.filter(user=>user.password===document.getElementById("password").value && user.user===document.getElementById("user").value)
-            if(isUserIn.length===0){
+            const isUserIn2 = res.filter(user=>user.password===document.getElementById("password").value && user.mail===document.getElementById("user").value)
+            if(isUserIn.length===0 || isUserIn2.length===0){
                 setCargando(false)
                 swal("INCORRECTO","USUARIO O CONTRASEÑA INCORRECTOS","info")
                 return
@@ -76,7 +77,7 @@ export default function Logearse({form,setForm,saveData}){
             <form onSubmit={handleSubmit(handleFormSubmit)}>
 
                 <div className="input">
-                    <input className="form-input" id="user" autoComplete="off" placeholder="Usuario" type={"text"}
+                    <input className="form-input" id="user" autoComplete="off" placeholder="Usuario o mail" type={"text"}
                     {...register("user",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.user?.type==="required"&&"Campo obligatorio"}
