@@ -27,14 +27,18 @@ export default function Logearse({form,setForm,saveData}){
             
             const isUserIn = res.filter(user=>user.password===document.getElementById("password").value && user.user===document.getElementById("user").value)
             const isUserIn2 = res.filter(user=>user.password===document.getElementById("password").value && user.mail===document.getElementById("user").value)
-            if(isUserIn.length===0 || isUserIn2.length===0){
+            if(isUserIn.length!==0 || isUserIn2.length!==0){
+                if(isUserIn.length!==0){
+                    saveData(isUserIn)
+                }else{
+                    saveData(isUserIn2)
+                }
                 setCargando(false)
-                swal("INCORRECTO","USUARIO O CONTRASEÑA INCORRECTOS","info")
                 return
             }
-
-            saveData(isUserIn)
             setCargando(false)
+            swal("INCORRECTO","USUARIO O CONTRASEÑA INCORRECTOS","info")
+            return
         })
     }
     
